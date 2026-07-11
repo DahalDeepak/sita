@@ -148,9 +148,9 @@ Thank you — SITA</textarea>
     <div>
       <label for="size">Text size</label>
       <select id="size" onchange="render()">
-        <option value="16px">Normal</option>
-        <option value="20px" selected>Large</option>
-        <option value="26px">Extra large</option>
+        <option value="24px">Normal</option>
+        <option value="34px" selected>Large</option>
+        <option value="46px">Extra large</option>
       </select>
     </div>
   </div>
@@ -186,8 +186,8 @@ function buildHtml(){
   const size = document.getElementById('size').value;
   const body = escapeHtml(msg).replace(/\n/g,'<br>');
   return '<html><head><meta charset="utf-8"></head>'
-    + '<body style="font-family:\'Courier New\',monospace; text-align:' + align + '; font-size:' + size + '; padding:6px;">'
-    + body
+    + '<body style="font-family:\'Courier New\',monospace; text-align:' + align + '; padding:6px;">'
+    + '<span style="font-size:' + size + ' !important; line-height:1.4;">' + body + '</span>'
     + '<br><br></body></html>';
 }
 
